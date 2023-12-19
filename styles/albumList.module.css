@@ -1,0 +1,81 @@
+.p_name {
+    font-size: 36px;
+    color: #fff;
+    text-align: center;
+    margin-top: 37px;
+    margin-bottom: 20px;
+}
+
+.a_email {
+    display: flex;
+    justify-content: center;
+    padding-right: 146px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.flex_icon {
+    display: flex;
+    align-items: center;
+}
+
+.p_email {
+    color: #fff;
+    font-size: 18px;
+    padding-left: 5px;
+    text-decoration: underline;
+}
+
+.box_album_title {
+    margin-left: 20px;
+    display: flex;
+    justify-content: start;
+}
+
+.p_album_title {
+    color: #fff;
+    font-size: 18px;    
+    padding-left: 8px;
+
+}
+
+.card_list {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    width: 455px;
+    height: 293px;
+    background-color: darkgoldenrod;
+}
+
+@media(max-width:320px) {
+
+    .p_name {
+        font-size: 18px;
+        color: #fff;
+        text-align: left;
+        margin: 50px 15px 20px 15px;
+    }    
+    
+    .a_email {
+        display: flex;
+        justify-content: center;
+        text-align: left;
+        padding-left: 65px;
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+    .box_album_title {
+        margin-left: 15px;
+    }
+    
+    .p_album_title {
+        color: #fff;
+        font-size: 14px;    
+        padding-left: 8px;
+    }
+    
+}
