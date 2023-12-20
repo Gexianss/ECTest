@@ -29,7 +29,7 @@
 .box_album_title {
     margin-left: 20px;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
 }
 
 .p_album_title {
