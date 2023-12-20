@@ -17,13 +17,15 @@ export default function Login() {
       .then((json) => setUsers(json))
   }, [])
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault()
+
     const user = users.find((user) => user.id.toString() === userId)
 
     if (user) {
       setUserId(userId)
       alert('Login successful!')
-      router.push(`/album-list`)
+      router.push('/album-list')
     } else {
       alert('Invalid UserID. Please try again.')
     }
@@ -32,7 +34,7 @@ export default function Login() {
   return (
     <>
       <div className={styles.outer_postion}>
-        <form>
+        <form onSubmit={handleLogin}>
           <div>
             <input
               className={styles.box_input}
@@ -42,7 +44,7 @@ export default function Login() {
               onChange={(e) => setLocalUserId(e.target.value)}
             />
           </div>
-          <button className={styles.box_login} onClick={handleLogin}>
+          <button type="submit" className={styles.box_login}>
             Log in
           </button>
           <p className={styles.box_p}>Don’t have an account?</p>

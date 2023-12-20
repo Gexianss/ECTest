@@ -6,7 +6,7 @@ import { RiNotificationLine } from 'react-icons/ri'
 export default function Header() {
   return (
     <>
-      <div className="flex_search">
+      <div className="flex_search desktop_only">
         {/* searchItem  */}
         <div className="box_icon">
           <GoSearch size={20} color="white" />
@@ -87,6 +87,9 @@ export default function Header() {
           }
 
           @media (max-width: 320px) {
+            .desktop_only {
+              display: none;
+            }
           }
         `}
       </style>
