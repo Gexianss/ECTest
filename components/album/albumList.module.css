@@ -1,0 +1,42 @@
+.flex_icon {
+    display: flex;
+    align-items: center;
+}
+
+.box_album_title {
+    margin-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.p_album_title {
+    color: #fff;
+    font-size: 18px;    
+    padding-left: 8px;
+}
+
+.card_list {
+    margin: 10px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 455px;
+    height: 293px;
+    margin: 10px 0px;
+}
+
+
+@media(max-width:320px) {
+
+    .box_album_title {
+        margin-left: 15px;
+    }
+    
+    .p_album_title {
+        font-size: 14px;    
+        padding-left: 8px;
+    }    
+}

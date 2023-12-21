@@ -25,7 +25,7 @@ export default function Login() {
     if (user) {
       setUserId(userId)
       alert('Login successful!')
-      router.push('/album-list')
+      router.push('/album')
     } else {
       alert('Invalid UserID. Please try again.')
     }
