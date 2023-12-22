@@ -1,6 +1,6 @@
 .user_info_grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-columns: 2fr 2fr 1fr;
 }
 
 .user_info {
@@ -35,6 +35,11 @@
 
 @media(max-width:320px) {
 
+    .user_info_grid {
+        display: grid;
+        grid-template-columns: 0fr 2fr 1fr;
+    }
+
     .p_name {
         font-size: 18px;
         color: #fff;
@@ -48,6 +53,7 @@
         text-align: left;
         margin-bottom: 20px;
         font-size: 14px;
+        padding-left: 15px;
     }
 
     .p_email {

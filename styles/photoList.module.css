@@ -1,0 +1,15 @@
+.p_title {
+    font-size: 36px;
+    color: #fff;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+@media(max-width:320px) {
+    .p_title {
+        font-size: 18px;
+        text-align: left;
+        padding: 49px 15px 20px 15px;
+        margin: 0;
+    }
+}

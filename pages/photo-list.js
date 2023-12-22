@@ -1,17 +1,20 @@
 import React from 'react'
 import Header from '@/components/layout/header'
 import TabBar from '@/components/layout/tab-bar'
-import { useAuthContext } from '@/context/authContext'
+import Photo from '@/components/album/photo'
+import { useRouter } from 'next/router'
+import styles from '../styles/photoList.module.css'
 
 export default function PhotoList() {
-    const {userId} = useAuthContext()
-    // const {albumId} = 
+  const router = useRouter()
+  const { albumId, albumTitle } = router.query
 
   return (
     <>
       <Header />
-      <p>quidem molestiae enim</p>
-      
+      <p className={styles.p_title}>{decodeURIComponent(albumTitle)}</p>
+      <Photo albumId={albumId} />
+
       <TabBar />
     </>
   )

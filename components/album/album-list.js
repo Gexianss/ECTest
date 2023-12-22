@@ -3,12 +3,10 @@ import { useAuthContext } from '@/context/authContext'
 import styles from './albumList.module.css'
 import { LiaBookmarkSolid } from 'react-icons/lia'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function AlbumList() {
   const { userId } = useAuthContext()
-  // const { setAlbumId } = useAlbumContext()
-  // const { setAlbumTitle } = useAlbumContext()
-
   const [albums, setAlbums] = useState([])
   const [photos, setPhotos] = useState([])
   const [showPhotos, setShowPhotos] = useState(false)
@@ -60,21 +58,27 @@ export default function AlbumList() {
               <div className={styles.flex_icon}>
                 <LiaBookmarkSolid size={25} color="gray" />
               </div>
-
-              <a href="#" className={styles.link}>
+              <Link
+                href={{
+                  pathname: '/photo-list',
+                  query: {
+                    albumId: album.id,
+                    albumTitle: encodeURIComponent(album.title),
+                  },
+                }}
+                className={styles.link}
+              >
                 <p className={styles.p_album_title}>{album.title}</p>
-              </a>
+              </Link>
             </div>
-
             <div className={styles.card_list}>
               {getPhotoSlice(album.id).map((photo) => (
                 <div key={photo.id} className={styles.card}>
                   <Image
                     src={photo.thumbnailUrl}
                     alt={photo.title}
-                    width={455}
-                    height={293}
-                    style={{ objectFit: 'fill' }}
+                    width={150}
+                    height={150}
                   />
                 </div>
               ))}
