@@ -1,5 +1,7 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react'
-import style from '../styles/pictureModal.module.css'
+import style from './pictureModal.module.css'
 import { LiaDownloadSolid } from 'react-icons/lia'
 import { TiArrowForwardOutline } from 'react-icons/ti'
 import { LiaInfoCircleSolid } from 'react-icons/lia'
@@ -9,7 +11,7 @@ import { LiaBookmarkSolid } from 'react-icons/lia'
 
 import Image from 'next/image'
 
-export default function PictureModal() {
+export default function PictureModal({ photo }) {
   return (
     <>
       <div>
@@ -32,14 +34,17 @@ export default function PictureModal() {
         </div>
 
         <div>
-          <Image></Image>
+          <Image
+            src={photo.thumbnailUrl}
+            alt={photo.title}
+            width={150}
+            height={150}
+          />
         </div>
         <div className={style.modal_footer}>
           <div>
             <p className={style.modal_footer_title}>Title</p>
-            <p className={style.modal_footer_p}>
-              accusamus beatae ad facilis cum similique qui sunt
-            </p>
+            <p className={style.modal_footer_p}>{photo.title}</p>
           </div>
           <div className={style.modal_footer_btnBox}>
             <div className={style.modal_footer_btn}>
