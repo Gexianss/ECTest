@@ -29,11 +29,17 @@ export default function Header() {
       <style jsx>
         {`
           .flex_search {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             height: 90px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 20px;
+            background-color: #111;
+
           }
           .box_icon {
             width: 50px;

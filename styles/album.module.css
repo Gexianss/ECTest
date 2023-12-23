@@ -1,6 +1,7 @@
 .user_info_grid {
     display: grid;
     grid-template-columns: 2fr 2fr 1fr;
+    margin-top: 90px;
 }
 
 .user_info {

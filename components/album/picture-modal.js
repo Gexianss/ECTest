@@ -10,17 +10,20 @@ import ReactModal from 'react-modal'
 import Image from 'next/image'
 
 export default function PictureModal({ isOpen, onRequestClose, photo }) {
+  // modal UI
   const modalStyle = {
     overlay: {
       position: 'fixed',
-      top: 120,
+      height: '93%',
+      top: 90,
       left: -20,
+      right: 1,
       backgroundColor: 'rgba(17,17,17, .8)',
     },
     content: {
       position: 'absolute',
-      width: '97%',
       left: 35,
+      width: '97.3%',
       border: '0px solid #ccc',
       background: '#111',
       overflow: 'auto',
@@ -38,6 +41,7 @@ export default function PictureModal({ isOpen, onRequestClose, photo }) {
         style={modalStyle}
       >
         <div>
+        {/* modal header */}
           <div className={style.modal_header}>
             <div className={style.modal_header_icon}>
               <p className={style.modal_header_p}>Download</p>
@@ -55,7 +59,7 @@ export default function PictureModal({ isOpen, onRequestClose, photo }) {
               <IoMdClose color="white" size={32} onClick={onRequestClose} />
             </div>
           </div>
-
+{/* image */}
           <div className={style.box_img}>
             <Image
               src={photo.thumbnailUrl}
@@ -65,6 +69,7 @@ export default function PictureModal({ isOpen, onRequestClose, photo }) {
               className={style.photo_img}
             />
           </div>
+          {/* modal footer */}
           <div className={style.modal_footer}>
             <div>
               <p className={style.modal_footer_title}>Title</p>

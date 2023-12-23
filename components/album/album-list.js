@@ -4,12 +4,22 @@ import styles from './albumList.module.css'
 import { LiaBookmarkSolid } from 'react-icons/lia'
 import Image from 'next/image'
 import Link from 'next/link'
+import PictureModal from './picture-modal'
 
 export default function AlbumList() {
   const { userId } = useAuthContext()
   const [albums, setAlbums] = useState([])
   const [photos, setPhotos] = useState([])
   const [showPhotos, setShowPhotos] = useState(false)
+  const [selectPhoto, setSelectPhoto] = useState(null)
+
+  const openModal = (photo) => {
+    setSelectPhoto(photo)
+  }
+
+  const closeModal = () => {
+    setSelectPhoto(null)
+  }
 
   // 如果螢幕寬度小於320就設定為true
   const updateShowPhoto = () => {
@@ -79,12 +89,20 @@ export default function AlbumList() {
                     alt={photo.title}
                     width={150}
                     height={150}
+                    onClick={() => openModal(photo)}
                   />
                 </div>
               ))}
             </div>
           </div>
         ))}
+        {selectPhoto && (
+          <PictureModal
+            isOpen={true}
+            onRequestClose={closeModal}
+            photo={selectPhoto}
+          />
+        )}
       </div>
     </>
   )

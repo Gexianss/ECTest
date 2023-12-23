@@ -2,7 +2,8 @@
     font-size: 36px;
     color: #fff;
     text-align: center;
-    margin: 20px 0px;
+    margin: 110px 0px 20px 0px;
+
 }
 
 @media(max-width:320px) {

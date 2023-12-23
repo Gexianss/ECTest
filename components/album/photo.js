@@ -5,14 +5,14 @@ import PictureModal from './picture-modal'
 
 export default function PhotoList({ albumId }) {
   const [photos, setPhotos] = useState([])
-  const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [selectPhoto, setSelectPhoto] = useState(null)
 
-  const openModal = () => {
-    setModalIsOpen(true)
+  const openModal = (photo) => {
+    setSelectPhoto(photo)
   }
 
   const closeModal = () => {
-    setModalIsOpen(false)
+    setSelectPhoto(null)
   }
 
   useEffect(() => {
@@ -20,6 +20,8 @@ export default function PhotoList({ albumId }) {
       .then((response) => response.json())
       .then((json) => setPhotos(json))
   }, [albumId])
+
+  console.log(selectPhoto)
 
   return (
     <>
@@ -32,16 +34,18 @@ export default function PhotoList({ albumId }) {
               width={150}
               height={150}
               className={styles.card}
-              onClick={openModal}
-            />
-            <PictureModal
-              isOpen={modalIsOpen}
-              onRequestClose={closeModal}
-              photo={photo}
+              onClick={() => openModal(photo)}
             />
           </div>
         ))}
       </div>
+      {selectPhoto && (
+        <PictureModal
+          isOpen={true}
+          onRequestClose={closeModal}
+          photo={selectPhoto}
+        />
+      )}
     </>
   )
 }
