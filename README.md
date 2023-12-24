@@ -35,6 +35,7 @@ Next.js 版本建議為：`14.0.1`
 
 ```bash
 git clone git@github.com:Gexianss/ECTest.git
+```
 
 ### 移動到專案內
 
