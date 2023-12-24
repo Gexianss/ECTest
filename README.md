@@ -1,38 +1,90 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# README 
 
-## Getting Started
+![專案封面圖](public/login.png)
 
-First, run the development server:
+
+## 功能
+
+測試帳號 **（透過API:https://jsonplaceholder.typicode.com/）**
+
+```bash
+帳號： 1
+```
+
+- [x] 登入
+- [x] 相簿列表
+- [x] 相⽚列表
+- [x] 相⽚ Popup
+
+...
+
+## 畫面
+
+
+![範例圖片 1](public/album.png)
+![範例圖片 2](public/photo-list.png)
+![範例圖片 3](public/modal.png)
+
+## 安裝
+
+
+以下將會引導你如何安裝此專案到你的電腦上。
+
+Next.js 版本建議為：`14.0.1` 
+
+### 取得專案
+
+```bash
+git clone git@github.com:Gexianss/ECTest.git
+
+### 移動到專案內
+
+```bash
+cd ECTest
+```
+
+### 安裝套件
+
+```bash
+npm install
+```
+
+### 環境變數設定
+
+請在終端機輸入 `cp .env.example .env` 來複製 .env.example 檔案，並依據 `.env` 內容調整相關欄位。
+
+### 運行專案
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 開啟專案
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+在瀏覽器網址列輸入以下即可看到畫面
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```bash
+http://localhost:3000/login
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 資料夾說明
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- pages - 畫面放置處
+- context - 應用程式相關連結放置處
+- component - 模組放置處
+- styles - scss 檔案放置處
+- public - 圖片放置處
 
-## Learn More
+## 專案技術
 
-To learn more about Next.js, take a look at the following resources:
+- Next.js v14.0.1
+- React v18.2.0 
+- React Icons v4.12.0
+- React Modal v3.16.1
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 相關開發工具
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- ESLint v8
+- Prettier v2.8.8
+- eslint-config-next v14.0.1
+- eslint-config-prettier v8.8.0
