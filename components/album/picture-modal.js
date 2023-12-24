@@ -33,6 +33,14 @@ export default function PictureModal({ isOpen, onRequestClose, photo }) {
       boxShadow: '0 0 20px 15px rgba(255, 255, 255, .1)',
     },
   }
+  // modal UI RWD
+  if (window.matchMedia('(max-width: 320px)').matches) {
+    modalStyle.overlay.height = '106%'
+    modalStyle.overlay.top = -42
+    modalStyle.overlay.marginTop = 43
+    modalStyle.content.left = 0
+    modalStyle.content.width = '100%'
+  }
   return (
     <>
       <ReactModal
@@ -41,7 +49,7 @@ export default function PictureModal({ isOpen, onRequestClose, photo }) {
         style={modalStyle}
       >
         <div>
-        {/* modal header */}
+          {/* modal header */}
           <div className={style.modal_header}>
             <div className={style.modal_header_icon}>
               <p className={style.modal_header_p}>Download</p>
@@ -59,22 +67,24 @@ export default function PictureModal({ isOpen, onRequestClose, photo }) {
               <IoMdClose color="white" size={32} onClick={onRequestClose} />
             </div>
           </div>
-{/* image */}
+          {/* image */}
           <div className={style.box_img}>
             <Image
               src={photo.thumbnailUrl}
               alt={photo.title}
-              width={500}
-              height={500}
+              width={150}
+              height={150}
               className={style.photo_img}
             />
           </div>
           {/* modal footer */}
           <div className={style.modal_footer}>
-            <div>
+            {/* footer title */}
+            <div className={style.modal_mobileOnly}>
               <p className={style.modal_footer_title}>Title</p>
               <p className={style.modal_footer_p}>{photo.title}</p>
             </div>
+            {/* footer btn */}
             <div className={style.modal_footer_btnBox}>
               <div className={style.modal_footer_btn}>
                 <p className={style.modal_footer_icon_p}>Like</p>

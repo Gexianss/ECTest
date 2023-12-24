@@ -5,6 +5,7 @@ import PictureModal from './picture-modal'
 
 export default function PhotoList({ albumId }) {
   const [photos, setPhotos] = useState([])
+  // 點選的照片
   const [selectPhoto, setSelectPhoto] = useState(null)
 
   const openModal = (photo) => {
@@ -15,13 +16,12 @@ export default function PhotoList({ albumId }) {
     setSelectPhoto(null)
   }
 
+  // 抓取此albumId的所有照片
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${albumId}`)
       .then((response) => response.json())
       .then((json) => setPhotos(json))
   }, [albumId])
-
-  console.log(selectPhoto)
 
   return (
     <>
@@ -39,6 +39,7 @@ export default function PhotoList({ albumId }) {
           </div>
         ))}
       </div>
+      {/* 點選照片後彈出modal */}
       {selectPhoto && (
         <PictureModal
           isOpen={true}

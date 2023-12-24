@@ -10,7 +10,9 @@ export default function AlbumList() {
   const { userId } = useAuthContext()
   const [albums, setAlbums] = useState([])
   const [photos, setPhotos] = useState([])
+  // modal switch
   const [showPhotos, setShowPhotos] = useState(false)
+  // 點選的照片
   const [selectPhoto, setSelectPhoto] = useState(null)
 
   const openModal = (photo) => {
@@ -96,6 +98,8 @@ export default function AlbumList() {
             </div>
           </div>
         ))}
+
+        {/* 點選照片後彈出modal */}
         {selectPhoto && (
           <PictureModal
             isOpen={true}

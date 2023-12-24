@@ -6,11 +6,11 @@ import { useRouter } from 'next/router'
 
 export default function Login() {
   const router = useRouter()
-
+  // 將userId傳到context儲存，維持狀態
   const { setUserId } = useAuthContext()
   const [users, setUsers] = useState([])
   const [userId, setLocalUserId] = useState('')
-
+  // 呼叫API
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then((response) => response.json())
@@ -19,12 +19,13 @@ export default function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault()
-
+    // 比對資料後端資料，查看是否有此會員
     const user = users.find((user) => user.id.toString() === userId)
 
     if (user) {
       setUserId(userId)
       alert('Login successful!')
+      // 成功後轉跳頁面
       router.push('/album')
     } else {
       alert('Invalid UserID. Please try again.')
@@ -34,6 +35,7 @@ export default function Login() {
   return (
     <>
       <div className={styles.outer_postion}>
+        {/* 使用表格Submit處理登入事件 */}
         <form onSubmit={handleLogin}>
           <div>
             <input

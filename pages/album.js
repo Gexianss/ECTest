@@ -7,6 +7,7 @@ import styles from '../styles/album.module.css'
 import { useAuthContext } from '@/context/authContext'
 
 export default function Album() {
+  // 抓取Context的userId
   const { userId } = useAuthContext()
   const [user, setUser] = useState(null)
 
@@ -38,6 +39,7 @@ export default function Album() {
           </a>
         </div>
       </div>
+      {/* import albumList component */}
       <AlbumList />
       <TabBar />
     </>
